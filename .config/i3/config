@@ -1,0 +1,416 @@
+#################################################
+#  _____ _____     ___             __ _         #
+#  \_   \___ /    / __\___  _ __  / _(_) __ _   #
+#   / /\/ |_ \   / /  / _ \| '_ \| |_| |/ _` |  #
+#/\/ /_  ___) | / /__| (_) | | | |  _| | (_| |  #
+#\____/ |____/  \____/\___/|_| |_|_| |_|\__, |  #
+#                                       |___/   #
+#                                talfaza        #
+#################################################
+
+
+set $mod Mod4
+
+font pango:JetBrainsMono Nerd Font Medium 13
+
+exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec --no-startup-id nm-applet
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+
+tiling_drag modifier titlebar
+
+bindsym $mod+Return exec kitty
+
+bindsym $mod+Shift+A kill
+
+bindsym $mod+d exec --no-startup-id rofi -show drun  
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+m focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+M move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle#################################################
+#  _____ _____     ___             __ _         #
+#  \_   \___ /    / __\___  _ __  / _(_) __ _   #
+#   / /\/ |_ \   / /  / _ \| '_ \| |_| |/ _` |  #
+#/\/ /_  ___) | / /__| (_) | | | |  _| | (_| |  #
+#\____/ |____/  \____/\___/|_| |_|_| |_|\__, |  #
+#                                       |___/   #
+#                                talfaza        #
+#################################################
+
+
+set $mod Mod4
+
+font pango:JetBrainsMono Nerd Font Medium 13
+
+exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec --no-startup-id nm-applet
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+floating_modifier $mod
+
+tiling_drag modifier titlebar
+
+bindsym $mod+Return exec kitty
+
+bindsym $mod+Shift+A kill
+
+bindsym $mod+d exec --no-startup-id rofi -show drun  
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+m focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+M move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+q focus parent
+
+# switch to workspace
+bindsym $mod+ampersand workspace number $ws1
+bindsym $mod+eacute workspace number $ws2
+bindsym $mod+quotedbl workspace number $ws3
+bindsym $mod+apostrophe workspace number $ws4
+bindsym $mod+parenleft workspace number $ws5
+bindsym $mod+minus workspace number $ws6
+bindsym $mod+egrave workspace number $ws7
+bindsym $mod+underscore workspace number $ws8
+bindsym $mod+ccedilla workspace number $ws9
+bindsym $mod+agrave workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+eacute move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+egrave move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+ccedilla move container to workspace number $ws9
+bindsym $mod+Shift+agrave move container to workspace number $ws10
+#terminal
+set $ws1 "1"
+#code
+set $ws2 "2"
+#firefox
+set $ws3 "3" 
+#spotify
+set $ws4 "4"
+#discord
+set $ws5 "5" 
+#thunar
+set $ws6 "6"
+#random 
+set $ws7 "7"
+#random 
+set $ws8 "8"
+#random 
+set $ws9 "9"
+#random 
+set $ws10 "10" 
+#assign to workspace
+
+assign [class = "kitty"] $ws1
+assign [class = "Code"] $ws2
+assign [class = "firefox"] $ws3
+for_window [class="Spotify"] move to workspace $ws4 
+assign [class = "discord"] $ws5
+assign [class = "Thunar"] $ws6
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window 
+mode "resize" {
+
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym m resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+set $bg-color 	                #cbe3e7
+set $inactive-bg-color          #626785
+set $inactive-bg-bar-color      #626785
+set $text-color                 #ffffff
+set $inactive-text-color        #ffffff
+set $urgent-bg-color            #863A6F
+
+
+
+
+# window colors
+                        #border              background         text                  indicator 
+client.focused          $bg-color           $bg-color          $text-color            $bg-color
+client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color   $inactive-bg-color
+client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color   $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color            $urgent-bg-color
+
+#polybar 
+
+exec_always --no-startup-id /home/talfaza/.config/polybar/launch.sh
+
+#feh for background 
+
+exec_always --no-startup-id feh --bg-scale /home/$USER/Pictures/wallpapers/wall4.png
+
+#picom
+exec_always picom
+
+#i3-gaps
+gaps inner 10
+
+#windows 
+
+
+#hide_edge_borders smart #no borders with single window
+
+for_window [class="^.*"] border pixel 2
+
+#maim for screenshot
+
+bindsym --release $mod+Shift+s exec --no-startup-id maim -d 5 "/home/talfaza/Pictures/Screenshots/$(date +%s).png"
+bindsym $mod+w exec --no-stratup-id .config/rofi/wifi
+exec_always chmod +x .config/rofi/wifi.bash
+
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+q focus parent
+
+# switch to workspace
+bindsym $mod+ampersand workspace number $ws1
+bindsym $mod+eacute workspace number $ws2
+bindsym $mod+quotedbl workspace number $ws3
+bindsym $mod+apostrophe workspace number $ws4
+bindsym $mod+parenleft workspace number $ws5
+bindsym $mod+minus workspace number $ws6
+bindsym $mod+egrave workspace number $ws7
+bindsym $mod+underscore workspace number $ws8
+bindsym $mod+ccedilla workspace number $ws9
+bindsym $mod+agrave workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+eacute move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+egrave move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+ccedilla move container to workspace number $ws9
+bindsym $mod+Shift+agrave move container to workspace number $ws10
+#terminal
+set $ws1 "1"
+#code
+set $ws2 "2"
+#firefox
+set $ws3 "3" 
+#spotify
+set $ws4 "4"
+#discord
+set $ws5 "5" 
+#thunar
+set $ws6 "6"
+#random 
+set $ws7 "7"
+#random 
+set $ws8 "8"
+#random 
+set $ws9 "9"
+#random 
+set $ws10 "10" 
+#assign to workspace
+
+assign [class = "kitty"] $ws1
+assign [class = "Code"] $ws2
+assign [class = "firefox"] $ws3
+for_window [class="Spotify"] move to workspace $ws4 
+assign [class = "discord"] $ws5
+assign [class = "Thunar"] $ws6
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window 
+mode "resize" {
+
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym m resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+set $bg-color 	                #cbe3e7
+set $inactive-bg-color          #626785
+set $inactive-bg-bar-color      #626785
+set $text-color                 #ffffff
+set $inactive-text-color        #ffffff
+set $urgent-bg-color            #863A6F
+
+
+
+
+# window colors
+                        #border              background         text                  indicator 
+client.focused          $bg-color           $bg-color          $text-color            $bg-color
+client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color   $inactive-bg-color
+client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color   $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color            $urgent-bg-color
+
+#polybar 
+
+exec_always --no-startup-id /home/talfaza/.config/polybar/launch.sh
+
+#feh for background 
+
+exec_always --no-startup-id feh --bg-scale /home/$USER/Pictures/wallpapers/wall4.png
+
+#picom
+exec_always picom
+
+#i3-gaps
+gaps inner 10
+
+#windows 
+
+
+#hide_edge_borders smart #no borders with single window
+
+for_window [class="^.*"] border pixel 2
+
+#maim for screenshot
+
+bindsym --release $mod+Shift+s exec --no-startup-id maim -d 5 "/home/talfaza/Pictures/Screenshots/$(date +%s).png"
+bindsym $mod+w exec --no-stratup-id .config/rofi/wifi
+exec_always chmod +x .config/rofi/wifi.bash
