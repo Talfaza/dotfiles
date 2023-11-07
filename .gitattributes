@@ -1,1 +1,3 @@
-*.vim linguist-detectable=false
+*.vim text eol=lf
+.vimrc text eol=lf
+.gvimrc text eol=lf
