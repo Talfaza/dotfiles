@@ -172,14 +172,18 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 #polybar 
 
-exec_always --no-startup-id /home/talfaza/.config/polybar/launch.sh
+exec_always --no-startup-id /home/$USER/.config/polybar/launch.sh
 
 
 #picom
-exec_always picom - config
+exec_always picom
 
 #i3-gaps
 gaps inner 10
+
+#autostart
+
+exec --no-startup-id setxkbmap fr
 
 #windows 
 
