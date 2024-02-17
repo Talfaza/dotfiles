@@ -9,4 +9,3 @@ fi
 echo "Starting Picom..."
 picom &
 
-echo "Picom started."
