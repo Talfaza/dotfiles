@@ -13,13 +13,13 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty 
 bindsym $mod+Shift+A kill
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus left
+bindsym $mod+h focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -28,10 +28,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+M move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move left
+bindsym $mod+Shift+H move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -40,7 +40,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+m split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -73,6 +73,16 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+
+assign [class = "kitty"] $ws1
+assign [class = "Code"] $ws2
+assign [class = "firefox"] $ws3
+for_window [class="Spotify"] move to workspace $ws4 
+assign [class = "discord"] $ws5
+assign [class = "Thunar"] $ws6
+
+
 
 # switch to workspace
 bindsym $mod+ampersand workspace number $ws1
@@ -152,10 +162,34 @@ bar {
     }
 }
 
+
+
+
+set $bg-color 	                #626785
+set $inactive-bg-color          #2E003D
+set $inactive-bg-bar-color      #626785
+set $text-color                 #ffffff
+set $inactive-text-color        #ffffff
+set $urgent-bg-color            #863A6F
+
+
+
+
+# window colors
+                        #border              background         text                  indicator 
+client.focused          $bg-color           $bg-color          $text-color            $bg-color
+client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color   $inactive-bg-color
+client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color   $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color            $urgent-bg-color
+
 #AutoStart
 #feh 
 exec_always feh --bg-scale /home/$USER/Downloads/wallhaven-856dlk.png
-#gaps 
+#window
 gaps inner 9 
+
+#hide_edge_borders smart #no borders with single window
+
+for_window [class="^.*"] border pixel 2
 #picom
 exec_always /home/$USER/.config/picom/start.sh 
