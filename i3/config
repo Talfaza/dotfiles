@@ -76,7 +76,7 @@ set $ws10 "10"
 
 
 assign [class = "kitty"] $ws1
-assign [class = "Code"] $ws2
+assign [class = "VSCodium"] $ws2
 assign [class = "firefox"] $ws3
 for_window [class="Spotify"] move to workspace $ws4 
 assign [class = "discord"] $ws5
@@ -193,3 +193,5 @@ gaps inner 9
 for_window [class="^.*"] border pixel 2
 #picom
 exec_always /home/$USER/.config/picom/start.sh 
+#maim
+bindsym --release $mod+Shift+s exec --no-startup-id maim -d 2 "/home/talfaza/Pictures/Screenshots/$(date +%s).png"
