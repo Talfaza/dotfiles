@@ -1,7 +1,14 @@
 
 # Fedora Os dotfiles : 
 
-![](src/2024-02-19 23-42-57.mp4)
+
+
+https://github.com/Talfaza/dotfiles/assets/42444571/9bd752c5-e533-4e03-a29b-1ddbaa564167
+
+
+
+
+
 
 
 ## Installation
