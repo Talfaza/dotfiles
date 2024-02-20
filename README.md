@@ -3,7 +3,9 @@
 
 
 
-https://github.com/Talfaza/dotfiles/assets/42444571/9bd752c5-e533-4e03-a29b-1ddbaa564167
+
+
+https://github.com/Talfaza/dotfiles/assets/42444571/b7d747f9-f4d3-4df2-9de6-aec755d93074
 
 
 
