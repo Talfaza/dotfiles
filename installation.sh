@@ -57,7 +57,7 @@ installPackage() {
   fi
 }
 
-packages=("htop" "curl" "wget" "rofi" "i3")
+packages=("htop" "curl" "wget" "rofi" "i3" "python3")
 
 for package in "${packages[@]}"; do
   installPackage "$package"
