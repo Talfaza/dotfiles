@@ -17,4 +17,4 @@ https://github.com/Talfaza/dotfiles/assets/42444571/b7d747f9-f4d3-4df2-9de6-aec7
 
 Install the needed packages :
 
-//TODO shell install script
+//TODO add all the packages
