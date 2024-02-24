@@ -57,11 +57,31 @@ installPackage() {
   fi
 }
 
-packages=("htop" "curl" "wget" "rofi" "i3" "python3" "dbus-devel" "gcc" "git" "libconfig-devel" "libdrm-devel" "libev-devel" "libX11-devel" "libX11-xcb" "libXext-devel" "libxcb-devel" "libGL-devel" "libEGL-devel" "meson" "pcre2-devel" "pixman-devel" "uthash-devel" "xcb-util-image-devel" "xcb-util-renderutil-devel" "xorg-x11-proto-devel" "playerctl" "gnome-system-monitor" "brightnessctl" "light" "xbacklight" "blueman" "zsh" "grep" "sed" "curl" "mpv" "yt-dlp" "ffmpeg" "fzf" "patch" "git" "wget" "vim" "neovim" "gnome-system-monitor"  "pavucontrol" "python3-tkinter" )  
-echo -en "Installing Needed Packages And Dependecies For My Config : \n"
+packages=("htop" "curl" "wget" "rofi" "i3" "python3" "dbus-devel" "gcc" "git" "libconfig-devel" "libdrm-devel" "libev-devel" "libX11-devel" "libX11-xcb" "neofetch" "gcc" "g++" "libXext-devel" "libxcb-devel" "libGL-devel" "libEGL-devel" "meson" "pcre2-devel" "pixman-devel" "uthash-devel" "xcb-util-image-devel" "xcb-util-renderutil-devel" "xorg-x11-proto-devel" "playerctl" "gnome-system-monitor" "brightnessctl" "light" "xbacklight" "blueman" "zsh" "grep" "sed" "curl" "mpv" "yt-dlp" "ffmpeg" "fzf" "patch" "git" "wget" "vim" "neovim" "gnome-system-monitor"  "pavucontrol" "python3-tkinter" "httpd")  
+echo -ne "Installing Needed Packages And Dependecies For My Config : \n \n"
 for package in "${packages[@]}"; do
   installPackage "$package"
 done
 
 find -iname "*.log" | xargs rm
+
+echo -e "[${BPurple}Downloading Wallpaper${Color_Off}]"
+wall=$(curl -s https://raw.githubusercontent.com/Talfaza/dotfiles/main/i3/wallhaven-856dlk.png > wallhaven-856dlk.png)
+
+if [ $? -eq 0 ];then 
+    echo -e "[${BGreen}Wallapaper Downloaded Successfully${Color_Off}]"
+  else  
+    echo -e "[${BRed}Error While Downloading The Wallpaper${Color_Off}]"
+    exit 1
+fi
+
+
+
+
+
+ohmyzsh="$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+
+
 
