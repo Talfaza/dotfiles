@@ -52,13 +52,13 @@ installPackage() {
     echo -e "[${BGreen}OK${Color_Off}] Package $package already installed"
   else
     echo -e "[${BRed}Error${Color_Off}] Package $package not installed"
-    sudo dnf install "$package" -y >install.log
+   sudo dnf install "$package" -y >install.log
     echo -e "[${BGreen}OK${Color_Off}] Package $package installed successfully"
   fi
 }
 
-packages=("htop" "curl" "wget" "rofi" "i3" "python3")
-
+packages=("htop" "curl" "wget" "rofi" "i3" "python3" "dbus-devel" "gcc" "git" "libconfig-devel" "libdrm-devel" "libev-devel" "libX11-devel" "libX11-xcb" "libXext-devel" "libxcb-devel" "libGL-devel" "libEGL-devel" "meson" "pcre2-devel" "pixman-devel" "uthash-devel" "xcb-util-image-devel" "xcb-util-renderutil-devel" "xorg-x11-proto-devel" "playerctl" "gnome-system-monitor" "brightnessctl" "light" "xbacklight" "blueman" "zsh" "grep" "sed" "curl" "mpv" "yt-dlp" "ffmpeg" "fzf" "patch" "git" "wget" "vim" "neovim" "gnome-system-monitor"  "pavucontrol" "python3-tkinter" )  
+echo -en "Installing Needed Packages And Dependecies For My Config : \n"
 for package in "${packages[@]}"; do
   installPackage "$package"
 done
