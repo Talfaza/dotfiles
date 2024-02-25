@@ -52,7 +52,8 @@ installPackage() {
     echo -e "[${BGreen}OK${Color_Off}] Package $package already installed"
   else
     echo -e "[${BRed}Error${Color_Off}] Package $package not installed"
-   sudo dnf install "$package" -y >install.log
+    sudo dnf install "$package" -y >install.log
+    echo -ne "\033[A\033[K"  
     echo -e "[${BGreen}OK${Color_Off}] Package $package installed successfully"
   fi
 }
@@ -64,24 +65,39 @@ for package in "${packages[@]}"; do
 done
 
 find -iname "*.log" | xargs rm
+#
+#echo -e "[${BPurple}Downloading Wallpaper${Color_Off}]"
+#wall=$(curl -s https://raw.githubusercontent.com/Talfaza/dotfiles/main/i3/wallhaven-856dlk.png > wallhaven-856dlk.png)
+#
+#if [ $? -eq 0 ];then 
+#    echo -e "[${BGreen}Wallapaper Downloaded Successfully${Color_Off}]"
+#  else  
+#    echo -e "[${BRed}Error While Downloading The Wallpaper${Color_Off}]"
+#    exit 1
+#fi
 
-echo -e "[${BPurple}Downloading Wallpaper${Color_Off}]"
-wall=$(curl -s https://raw.githubusercontent.com/Talfaza/dotfiles/main/i3/wallhaven-856dlk.png > wallhaven-856dlk.png)
 
-if [ $? -eq 0 ];then 
-    echo -e "[${BGreen}Wallapaper Downloaded Successfully${Color_Off}]"
-  else  
-    echo -e "[${BRed}Error While Downloading The Wallpaper${Color_Off}]"
-    exit 1
+echo -e "[${BBlue}Cloning Ohmyzsh ${Color_Off}]"
+
+
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" >>install.log
+if [ $? -eq 0 ];then
+
+  echo -e "[${BGreen}Ohmyzsh Downloaded Successfully${Color_Off}]"
 fi
 
+chsh -s $(which zsh) >>install.log 2>>installError.log
 
+echo -e "[${BBlue}Changing Default Shell${Color_Off}]"
+if [ $? -eq 0 ];then
 
+  echo -ne "\033[A\033[K"  
+  echo -e "[${BGreen}OK${Color_Off}] Shell Changed Successfully"
+else
+  
+  echo -ne "\033[A\033[K"  
+  echo -e "[${BRed}Error${Color_Off}] Cannot Change The Shell"
+fi
 
-
-ohmyzsh="$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-
-
+zsh >>install.log
 
