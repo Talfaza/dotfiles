@@ -64,7 +64,7 @@ for package in "${packages[@]}"; do
   installPackage "$package"
 done
 
-find -iname "*.log" | xargs rm
+#find -iname "*.log" | xargs rm
 #
 #echo -e "[${BPurple}Downloading Wallpaper${Color_Off}]"
 #wall=$(curl -s https://raw.githubusercontent.com/Talfaza/dotfiles/main/i3/wallhaven-856dlk.png > wallhaven-856dlk.png)
