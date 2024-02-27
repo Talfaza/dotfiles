@@ -150,7 +150,7 @@ bar {
 	tray_output none
 	status_command ~/.local/bin/bumblebee-status \
 	-m playerctl memory battery date time brightness bluetooth2 pasink dnf system\
-	-p root.path=/ time.format="%H:%M" date.format="%a, %b %d %Y" \
+	-p system.lock: i3lock-fancy   root.path=/ time.format="%H:%M" date.format="%a, %b %d %Y" \
 	-t moonlight-powerline 
 	  colors {
         background #131421
@@ -197,4 +197,4 @@ for_window [class="^.*"] border pixel 2
 #picom
 exec_always /home/$USER/.config/picom/start.sh 
 #maim
-bindsym --release $mod+Shift+s exec --no-startup-id maim -d 2 "/home/talfaza/Pictures/Screenshots/$(date +%s).png"
+bindsym --release $mod+Shift+s exec --no-startup-id maim -d 2 "/home/$USER/Pictures/Screenshots/$(date +%s).png"
