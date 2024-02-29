@@ -31,7 +31,7 @@ if [ $? -eq 0 ]; then
   echo -e "[${BGreen}OK${Color_Off}] Package $package already installed"
 else
   echo -e "[${BRed}Error${Color_Off}] Package $package not installed"
-  sudo dnf install "$package" -y >install.log
+  sudo dnf install "$package" -y | grep "Estimated download time" | awk '{print $4}' >install.log
   echo -ne "\033[A\033[K"  
   echo -e "[${BGreen}OK${Color_Off}] Package $package installed successfully"
 fi
