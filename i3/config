@@ -9,6 +9,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+bindsym XF86MonBrightnessUp  exec --no-startup-id brightnessctl set +10000
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10000-
+
+
 floating_modifier $mod
 tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty 
@@ -194,6 +198,7 @@ gaps inner 9
 #hide_edge_borders smart #no borders with single window
 
 for_window [class="^.*"] border pixel 2
+
 #picom
 exec_always /home/$USER/.config/picom/start.sh 
 #maim
