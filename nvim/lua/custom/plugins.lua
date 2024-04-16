@@ -12,8 +12,8 @@ local plugins = {
       ensure_installed = {
         "clangd",
         "clang-format",
-        "codelldb",
-        "pyright",
+        "jedi-language-server",
+        "gopls",
       }
     }
   }
