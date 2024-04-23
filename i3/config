@@ -88,6 +88,7 @@ assign [class = "firefox"] $ws3
 for_window [class="Spotify"] move to workspace $ws4 
 assign [class = "discord"] $ws5
 assign [class = "Thunar"] $ws6
+assign [class = "obsidian"] $ws2
 
 
 
