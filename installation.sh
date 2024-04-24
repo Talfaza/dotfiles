@@ -37,7 +37,7 @@ else
 fi
 }
 
-packages=("htop" "curl" "wget" "rofi" "i3" "python3" "telnet" "telnet-server" "dbus-devel" "gcc" "git" "libconfig-devel" "libdrm-devel" "libev-devel" "libX11-devel" "libX11-xcb" "neofetch" "gcc" "g++" "libXext-devel" "libxcb-devel" "libGL-devel" "libEGL-devel" "meson" "pcre2-devel" "pixman-devel" "uthash-devel" "xcb-util-image-devel" "xcb-util-renderutil-devel" "xorg-x11-proto-devel" "playerctl" "gnome-system-monitor" "brightnessctl" "light" "xbacklight" "blueman" "zsh" "grep" "sed" "curl" "mpv" "yt-dlp" "ffmpeg" "fzf" "patch" "git" "wget" "vim" "neovim" "gnome-system-monitor"  "pavucontrol" "python3-tkinter" "httpd")  
+packages=("htop" "curl" "wget" "rofi" "i3" "python3" "telnet" "telnet-server" "dbus-devel" "gcc" "git" "libconfig-devel" "libdrm-devel" "libev-devel" "libX11-devel" "libX11-xcb" "neofetch" "gcc" "g++" "libXext-devel" "libxcb-devel" "libGL-devel" "libEGL-devel" "meson" "pcre2-devel" "pixman-devel" "uthash-devel" "xcb-util-image-devel" "xcb-util-renderutil-devel" "xorg-x11-proto-devel" "playerctl" "gnome-system-monitor" "brightnessctl" "light" "xbacklight" "blueman" "zsh" "grep" "sed" "curl" "mpv" "yt-dlp" "ffmpeg" "fzf" "patch" "git" "wget" "vim" "neovim" "gnome-system-monitor"  "pavucontrol" "python3-tkinter" "httpd" "xinput")  
 echo -ne "${UWhite}Installing Needed Packages And Dependecies For My Config :${Color_Off} \n \n"
 for package in "${packages[@]}"; do
 installPackage "$package"
