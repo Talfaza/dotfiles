@@ -204,3 +204,6 @@ for_window [class="^.*"] border pixel 2
 exec_always /home/$USER/.config/picom/start.sh 
 #maim
 bindsym --release $mod+Shift+s exec --no-startup-id maim -d 2 "/home/$USER/Pictures/Screenshots/$(date +%s).png"
+
+set $touchPadId 10 
+exec xinput --set-prop $touchPadId "libinput Tapping Enabled" 1
