@@ -192,7 +192,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 #AutoStart
 #feh 
-exec_always feh --bg-scale /home/$USER/.config/i3/wallhaven-856dlk.png
+exec_always feh --bg-scale /home/$USER/.config/i3/wall3.jpg
 #window
 gaps inner 9 
 
