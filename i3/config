@@ -156,14 +156,15 @@ bar {
 	status_command ~/.local/bin/bumblebee-status \
 	-m playerctl memory battery date time brightness bluetooth2 pasink dnf system\
 	-p system.lock: i3lock-fancy   root.path=/ time.format="%H:%M" date.format="%a, %b %d %Y" \
-	-t moonlight-powerline 
-	  colors {
-        background #131421
+	-t gruvbox-powerline 
+  colors {
+
+        background #3c3836        
         statusline #ffffff
         separator #666666
 	
 	#class 		   #border #bg     #text	
-        focused_workspace  #131421 #131421 #ffffff
+        focused_workspace  #3c3836 #3c3836 #ffffff
         active_workspace   #333333 #5f676a #ffffff
         inactive_workspace #222222 #222222 #888888
         urgent_workspace   #ff98a4 #ff98a4 #ffffff
@@ -173,8 +174,8 @@ bar {
 
 
 
-set $bg-color 	                #626785
-set $inactive-bg-color          #2E003D
+set $bg-color 	                #ffffff
+set $inactive-bg-color          #202020
 set $inactive-bg-bar-color      #626785
 set $text-color                 #ffffff
 set $inactive-text-color        #ffffff
