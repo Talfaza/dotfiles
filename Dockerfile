@@ -6,4 +6,3 @@ RUN dnf update -y && \
 
 # Define the default command to run when the container starts
 CMD ["bash"]
-
