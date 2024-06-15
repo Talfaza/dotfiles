@@ -1,0 +1,4 @@
+httpd-2.4.58-1.fc39.x86_64
+The $ZSH folder already exists (/root/.oh-my-zsh).
+You'll need to remove it if you want to reinstall.
+Changing shell for root.
