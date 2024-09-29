@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 echo "Syncing files to git repo"
 rsync -av --progress ~/.config/i3/ ~/gitthings/dotfiles/i3/
+rsync -av --progress  ~/gitthings/dotfiles/walls/ ~/.config/i3/walls
 
 if [[ $0 ]]; then 
 	echo "Files synced ! "
