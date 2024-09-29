@@ -1,1 +1,0 @@
-/home/talfaza/.config/i3
