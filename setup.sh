@@ -55,5 +55,15 @@ else
   echo -e "[${BRed}Error${Color_Off}] Could not change the shell"
 fi
 
-rm -rf install.log installError.log
 
+echo -e "[${BBlue}Setting up wallpaper${Color_Off}]"
+
+# Use sudo to run feh as the regular user and provide the full path to feh
+feh --bg-scale /home/talfaza/.config/i3/walls/wall.png 2>>installError.log
+if [ $? -eq 0 ]; then
+  echo -e "[${BGreen}OK${Color_Off}] Wallpaper changed successfully"
+else
+  echo -e "[${BRed}Error${Color_Off}] Could not change the wallpaper"
+fi
+
+rm -rf install.log installError.log
