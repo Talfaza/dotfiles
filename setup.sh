@@ -11,7 +11,7 @@ echo "
 
 # Reset
 Color_Off='\033[0m'
-
+WHO="talfaza"
 # Bold
 BRed='\033[1;31m'
 BGreen='\033[1;32m'
@@ -42,7 +42,6 @@ installPackage() {
 }
 
 packages=(
-  "i3"
   "git"
   "curl"
   "wget"
@@ -84,7 +83,7 @@ fi
 
 echo -e "[${BBlue}Setting up wallpaper${Color_Off}]"
 
-feh --bg-scale /home/talfaza/.config/i3/walls/wall.png 2>>installError.log
+feh --bg-scale /home/$WHO/.config/i3/walls/wall.png 2>>installError.log
 if [ $? -eq 0 ]; then
   echo -e "[${BGreen}OK${Color_Off}] Wallpaper changed successfully"
 else
@@ -99,6 +98,15 @@ else
   echo -e "[${BRed}Error${Color_Off}] Could build picom"
 fi
 cd ..;rm -rf picom
+
+mkdir -p /home/$WHO/.config/picom
+mkdir -p /home/$WHO/picom  
+mv config/picom/picom.conf /home/$WHO/picom/picom.conf 
+if [ $? -eq 0 ]; then
+  echo -e "[${BGreen}OK${Color_Off}] Picom setup successfully"
+else
+  echo -e "[${BRed}Error${Color_Off}] Could not setup picom"
+fi
 
 echo -e "[${BRed}Installing${Color_Off}]Package bumblebee-status not installed " 
 pip install --user bumblebee-status 2>>installError.log >> install.log
