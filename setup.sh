@@ -41,7 +41,33 @@ installPackage() {
   fi
 }
 
-packages=("i3" "git" "curl" "wget" "feh" "blueman" "kitty")
+packages=(
+  "i3"
+  "git"
+  "curl"
+  "wget"
+  "feh"
+  "blueman"
+  "kitty"
+  "dbus-devel"
+  "gcc"
+  "libconfig-devel"
+  "libdrm-devel"
+  "libev-devel"
+  "libX11-devel"
+  "libX11-xcb"
+  "libXext-devel"
+  "libxcb-devel"
+  "libGL-devel"
+  "libEGL-devel"
+  "meson"
+  "pcre2-devel"
+  "pixman-devel"
+  "uthash-devel"
+  "xcb-util-image-devel"
+  "xcb-util-renderutil-devel"
+  "xorg-x11-proto-devel"
+)
 echo -ne "${UWhite}Installing the neccesary packages and setuping the config :${Color_Off} \n\n"
 for package in "${packages[@]}"; do
   installPackage "$package"
@@ -65,4 +91,20 @@ else
   echo -e "[${BRed}Error${Color_Off}] Could not change the wallpaper"
 fi
 
+echo -e "[${BBlue}Building Picom${Color_Off}]"
+git clone https://github.com/fdev31/picom.git 2>>installError.log >>install.log;cd picom;git submodule update --init --recursive;meson setup --buildtype=release . build;ninja -C build;ninja -C build install >>install.log
+if [ $? -eq 0 ]; then
+  echo -e "[${BGreen}OK${Color_Off}] Picom built successfully"
+else
+  echo -e "[${BRed}Error${Color_Off}] Could build picom"
+fi
+cd ..;rm -rf picom
+
+echo -e "[${BRed}Installing${Color_Off}]Package bumblebee-status not installed " 
+pip install --user bumblebee-status 2>>installError.log >> install.log
+if [ $? -eq 0 ]; then
+  echo -e "[${BGreen}OK${Color_Off}] Package bumblebee-status installed successfully"
+else
+  echo -e "[${BRed}Error${Color_Off}] Failed to install bumblebee-status"
+fi
 rm -rf install.log installError.log
