@@ -189,7 +189,7 @@ bar {
         status_command i3status
 }
 #window
-gaps inner 9 
+gaps inner 10 
 
 #hide_edge_borders smart #no borders with single window
 
