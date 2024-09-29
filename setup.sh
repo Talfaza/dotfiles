@@ -58,7 +58,6 @@ fi
 
 echo -e "[${BBlue}Setting up wallpaper${Color_Off}]"
 
-# Use sudo to run feh as the regular user and provide the full path to feh
 feh --bg-scale /home/talfaza/.config/i3/walls/wall.png 2>>installError.log
 if [ $? -eq 0 ]; then
   echo -e "[${BGreen}OK${Color_Off}] Wallpaper changed successfully"
