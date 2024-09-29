@@ -188,3 +188,9 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+#window
+gaps inner 9 
+
+#hide_edge_borders smart #no borders with single window
+
+for_window [class="^.*"] border pixel 2
