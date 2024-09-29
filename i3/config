@@ -3,6 +3,7 @@ include workspace.conf
 include resize.conf
 include bar.conf
 include window.conf
+include autostart.conf
 
 set $mod Mod4
 font pango:monospace 8
