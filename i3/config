@@ -5,6 +5,8 @@ include bar.conf
 include window.conf
 include autostart.conf
 
+set $fm HDMI-1-0
+set $sm eDP-1  
 set $mod Mod4
 font pango:monospace 8
 exec --no-startup-id dex-autostart --autostart --environment i3
