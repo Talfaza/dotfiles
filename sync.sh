@@ -37,7 +37,7 @@ if [[ $? -eq 0 ]]; then
 else 
 	echo "Error ! "
 fi
-rsync -av --progress ~/.config/nvim/ ~/gitthings/dotfiles/nvim/
+rsync -av --progress ~/.config/nvim/lua ~/gitthings/dotfiles/nvim/
 
 if [[ $? -eq 0 ]]; then 
 	echo "Files synced ! "
