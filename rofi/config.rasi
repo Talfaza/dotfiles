@@ -3,7 +3,7 @@ configuration {
   drun-display-format: "{icon} {name}";
   font: "JetBrainsMono Nerd Font Medium 10";
   show-icons: true;
-  modi: "drun";
+  modi: "drun,window,emoji";
 }
 
 @theme "/dev/null"

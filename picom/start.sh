@@ -5,6 +5,5 @@ if pgrep picom > /dev/null; then
     sleep 1
 fi
 
-echo "Starting Picom..."
 picom &
 
